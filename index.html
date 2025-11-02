@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. S. Chowdhury - Cardiology & Electrophysiology Services</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f7; /* Light blue-grey background */
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #005eb8; /* NHS Blue */
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #00a3a3; /* Teal accent */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .bio-section {
+            background-color: #fff;
+            padding: 40px 20px;
+            border-bottom: 1px solid #e0e6eb;
+            text-align: center;
+        }
+        .bio-section img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 25px;
+            border: 5px solid #00a3a3; /* Teal accent */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .bio-section h2 {
+            color: #005eb8; /* NHS Blue */
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .bio-section p {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .reviews-section {
+            background-color: #e6f0f5; /* Lighter blue-grey */
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 1px solid #d0dae0;
+        }
+        .reviews-section h2 {
+            color: #004780; /* Darker blue */
+            font-size: 2.2em;
+            margin-bottom: 40px;
+        }
+        .reviews-carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            height: 250px; /* Adjust height based on content */
+        }
+        .review-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 0 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            width: 300px;
+            flex-shrink: 0;
+            text-align: left;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.7s ease-in-out;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .review-card.active {
+            opacity: 1;
+            transform: translateX(0);
+            position: relative;
+        }
+        .review-card p {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+        .review-card .author {
+            font-weight: bold;
+            color: #333;
+            text-align: right;
+            margin-top: auto;
+        }
+        .carousel-nav {
+            margin-top: 30px;
+        }
+        .carousel-nav button {
+            background-color: #0072c6; /* Mid-blue */
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 0 10px;
+            transition: background-color 0.3s ease;
+        }
+        .carousel-nav button:hover {
+            background-color: #005bb5; /* Darker mid-blue */
+        }
+        .appointment-section {
+            background-color: #005eb8; /* NHS Blue */
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .appointment-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 25px;
+        }
+        .appointment-section p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .appointment-section .cta-button {
+            background-color: #00a3a3; /* Teal accent */
+            color: #fff;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        .appointment-section .cta-button:hover {
+            background-color: #008787; /* Darker teal */
+            transform: translateY(-3px);
+        }
+        footer {
+            background-color: #003087; /* Dark NHS Blue */
+            color: #bbb;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Dr. S. Chowdhury</h1>
+            <p>Leading Expert in Cardiology and Heart Rhythm Disorders</p>
+        </div>
+    </header>
+
+    <section class="bio-section">
+        <div class="container">
+            <img src="SKC.png" alt="Dr. S. Chowdhury">
+            <h2>About Dr. S. Chowdhury</h2>
+            <p>Dr. Chowdhury is an internationally-accredited cardiologist & electrophysiologist with years of training & experience dedicated to providing exceptional cardiac care. With a compassionate approach and a focus on evidence-based medicine, Dr. Chowdhury specialises in the diagnosis, treatment, and prevention of various heart disease. His extensive expertise is in managing arrhythmias including atrial fibrillation, flutter, supraventricular tachycardais, ventricular arrhythmias and providing cardiac devices care. Dr. Chowdhury is committed to empowering patients with knowledge about their heart health and guiding them towards a healthier, more active life.</p>
+            <p>Dr. Chowdhury completed his training in the north-west UK, followed by electrophysiology fellowship in Canada. He is a triple-accredited member of various British, European and American cardiac professionals societies and regularly contribute to medical research and health initiatives.</p>
+        </div>
+    </section>
+
+    <section class="reviews-section">
+        <div class="container">
+            <h2>What Our Patients Say</h2>
+            <div class="reviews-carousel">
+                <div class="review-card">
+                    <p>"Dr. Chowdhury saved my life. Their expertise and calm demeanor put me at ease during a very stressful time. I highly recommend them to anyone seeking top-tier cardiac care."</p>
+                    <div class="author">- (redacted) (redacted))</div>
+                </div>
+                <div class="review-card">
+                    <p>"The entire team at Dr. Chowdhury's office is phenomenal. From initial consult to follow-up, everything was smooth. Dr. Chowdhury is incredibly knowledgeable and truly listens."</p>
+                    <div class="author">- (redacted) (redacted)</div>
+                </div>
+                <div class="review-card">
+                    <p>"I've struggled with heart palpitation for years, and Dr. Chowdhury is the first doctor who truly helped me understand my condition and develop a sustainable plan. I feel so much better now!"</p>
+                    <div class="author">- (redacted) (redacted)</div>
+                </div>
+                <div class="review-card">
+                    <p>"Professional, empathetic, and brilliant. Dr. Chowdhury explained everything clearly and answered all my questions patiently. Excellent care!"</p>
+                    <div class="author">- (redacted) (redacted)</div>
+                </div>
+                <div class="review-card">
+                    <p>"My experience was exceptional. The staff are all so friendly. Dr. Chowdhury is truly a leader in their field."</p>
+                    <div class="author">- (redacted) (redacted)</div>
+                </div>
+                <div class="review-card">
+                    <p>"Finding a cardiologist you can trust is crucial, and I've found that in Dr. Chowdhury. They provide thorough examinations and thoughtful advice."</p>
+                    <div class="author">- (redacted) (redacted)</div>
+                </div>
+                <div class="review-card">
+                    <p>"From my initial consultation to my ongoing care, Dr. Chowdhury has been nothing short of amazing. Highly recommend!"</p>
+                    <div class="author">- (redacted) (redacted)</div>
+                </div>
+                <div class="review-card">
+                    <p>"Compassionate care and brilliant medical insight. Dr. Chowdhury is a doctor who genuinely cares about their patients' well-being."</p>
+                    <div class="author">- (redacted) (redacted)</div>
+                </div>
+                <div class="review-card">
+                    <p>"I appreciate the personalized approach Dr. Chowdhury takes. I never feel rushed, and always leave feeling confident in my treatment plan."</p>
+                    <div class="author">- (redacted) (redacted)</div>
+                </div
+                <div class="review-card">
+                    <p>"Truly an outstanding cardiologist. Dr. Chowdhury has a gift for making complex medical information easy to understand."</p>
+                    <div class="author">- E(redacted) (redacted)</div>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <button id="prevReview">Previous</button>
+                <button id="nextReview">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="appointment-section">
+        <div class="container">
+            <h2>Ready to Prioritize Your Heart Health?</h2>
+            <p>Take the first step towards a healthier heart. Schedule a consultation with Dr. S. Chowdhury today to discuss your cardiovascular needs and create a personalized care plan.</p>
+            <a href="mailto:opa@drchowdhury.co.uk" class="cta-button">Book an Appointment</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dr. S. Chowdhury. All rights reserved.</p>
+            <p>opa@drchowdhury.co.uk</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reviews = document.querySelectorAll('.review-card');
+            let currentIndex = 0;
+            const reviewsPerPage = 3; // Number of reviews to show at a time
+
+            function showReviews(startIndex) {
+                reviews.forEach((review, index) => {
+                    review.classList.remove('active');
+                    review.style.position = 'absolute';
+                    review.style.left = '';
+                    review.style.transform = 'translateX(100%)';
+                });
+
+                for (let i = 0; i < reviewsPerPage; i++) {
+                    const reviewIndex = (startIndex + i) % reviews.length;
+                    const review = reviews[reviewIndex];
+                    if (review) {
+                        review.classList.add('active');
+                        review.style.position = 'relative';
+                        review.style.transform = 'translateX(0)';
+                        review.style.left = `${(i * 330) - 330}px`;
+                    }
+                }
+            }
+
+            function nextReview() {
+                currentIndex = (currentIndex + 1) % reviews.length;
+                showReviews(currentIndex);
+            }
+
+            function prevReview() {
+                currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+                showReviews(currentIndex);
+            }
+
+            document.getElementById('nextReview').addEventListener('click', nextReview);
+            document.getElementById('prevReview').addEventListener('click', prevReview);
+
+            // Initialize carousel
+            showReviews(currentIndex);
+        });
+    </script>
+
+</body>
+</html>
