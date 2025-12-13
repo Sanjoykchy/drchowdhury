@@ -187,7 +187,9 @@
             font-size: 0.9em;
         }
     </style>
-</head>
+<!-- Calendly widget CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+    </head>
 <body>
 
     <header>
@@ -262,8 +264,9 @@
         <div class="container">
             <h2>Ready to Prioritize Your Heart Health?</h2>
             <p>Take the first step towards a healthier heart. Schedule a consultation with Dr. S. Chowdhury today to discuss your cardiovascular needs and create a personalized care plan.</p>
-            <a href="https://forms.gle/BuwbRsLV7hJ6jo7e7" class="cta-button">Book an Appointment</a>
-            <p>If you would like to review the care you received from Dr. S. Chowdhury, <a href="https://forms.gle/A2rdNPUWFVJ1Ypvt8">use this.</a></p>
+            <a href="#" class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/schowdhury'}); return false;">Book an Appointment</a>
+
+            <p>If you would like to review the care you received from Dr. S. Chowdhury, <a href="https://forms.gle/A2rdNPUWFVJ1Ypvt8">USE THIS.</a></p>
         </div>
     </section>
 
@@ -316,6 +319,8 @@
             showReviews(currentIndex);
         });
     </script>
-
+    <!-- Calendly widget JS -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+    </body>
 </body>
 </html>
